@@ -1,1 +1,49 @@
-node_modules
+# ===============================
+# Node
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Metro cache
+.metro-cache/
+
+# ===============================
+# React Native / Expo
+# ===============================
+.expo/
+.expo-shared/
+
+# ===============================
+# Android
+# ===============================
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+*.keystore
+*.jks
+
+# ===============================
+# iOS
+# ===============================
+ios/Pods/
+ios/build/
+ios/DerivedData/
+*.xcworkspace
+*.xcuserdata
+Podfile.lock
+
+# ===============================
+# Environment / secrets
+# ===============================
+.env
+.env.*
+*.env
+
+# ===============================
+# Logs
+# ============
