@@ -1,8 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
   KeyboardAvoidingView,

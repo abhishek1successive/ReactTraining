@@ -1,3 +1,5 @@
+import { navigate } from "@navigation";
+import { SCREENS } from "@shared-constants";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { TextInput, Alert } from "react-native";
 import SignUpScreen from "views/signup/SignUpScreen";
@@ -32,6 +34,10 @@ const SignUpScreenViewModel = () => {
     console.log(`Signup with ${provider}`);
   }, []);
 
+  const lgnbuttonPress = () => {
+    navigate(SCREENS.NEwLOGIN);
+  };
+
   return (
     <SignUpScreen
       firstName={firstName}
@@ -48,6 +54,7 @@ const SignUpScreenViewModel = () => {
       setPassword={setPassword}
       onSignup={onSignup}
       onSocialSignup={onSocialSignup}
+      onlogin={lgnbuttonPress}
     />
   );
 };

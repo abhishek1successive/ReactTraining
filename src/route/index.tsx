@@ -12,10 +12,10 @@ import DetailScreen from "views/detail/DetailScreen";
 import NotificationScreen from "views/notification/NotificationScreen";
 import ProfileScreen from "views/profile/ProfileScreen";
 import SearchScreen from "views/search/SearchScreen";
-import HomeScreenViewModel from "../viewModels/HomeScreenViewModel";
 import NewLoginViewModel from "viewModels/NewLoginViewModel";
-import SignUpScreen from "views/signup/SignUpScreen";
 import SignUpScreenViewModel from "viewModels/SignUpViewModel";
+import NewHomeViewModel from "viewModels/NewHomeScreenViewModel";
+import { HomeHeader } from "views/newhome/NewHomeHeader";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -40,10 +40,13 @@ const TabIcon = (route: any, focused: boolean) => {
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+    <HomeStack.Navigator screenOptions={{ headerShown: true }}>
       <HomeStack.Screen
-        name={SCREENS.DASHBOARD}
-        component={HomeScreenViewModel}
+        name={SCREENS.NEWHOMESCREEN}
+        component={NewHomeViewModel}
+        options={{
+          header: () => <HomeHeader />,
+        }}
       />
       <HomeStack.Screen name={SCREENS.DETAIL} component={DetailScreen} />
     </HomeStack.Navigator>

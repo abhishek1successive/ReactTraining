@@ -23,7 +23,7 @@ function AppButton({ title, onPress, disabled = false }: AppButtonProps) {
 
 export default AppButton;
 
-const createStyles = (colors?: any) =>
+const createStyles = (colors?: string) =>
   StyleSheet.create({
     loginBtn: {
       backgroundColor: colors?.danger,

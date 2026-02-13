@@ -34,6 +34,7 @@ interface SignUpProps {
   setPassword: Setter;
   onSocialSignup: (provider: "google" | "facebook") => void;
   onSignup: () => void;
+  onlogin: () => void;
 }
 
 const SignUpScreen = (props: SignUpProps) => {
@@ -143,7 +144,7 @@ const SignUpScreen = (props: SignUpProps) => {
           <TouchableOpacity
             style={styles.loginLink}
             onPress={() => {
-              props.onSocialSignup;
+              props.onlogin();
             }}
           >
             <Text style={styles.loginLinkText}>

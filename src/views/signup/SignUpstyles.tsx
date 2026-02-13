@@ -27,50 +27,6 @@ export const styles = StyleSheet.create({
     maxHeight: 140,
   },
 
-  input: {
-    backgroundColor: "#EAEAEA",
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    height: 46,
-    marginBottom: 12,
-    fontSize: 16,
-  },
-
-  passwordWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#EAEAEA",
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    height: 46,
-    marginBottom: 16,
-  },
-
-  passwordInput: {
-    flex: 1,
-    fontSize: 16,
-  },
-
-  showText: {
-    color: RED,
-    fontWeight: "600",
-  },
-
-  signupBtn: {
-    backgroundColor: RED,
-    height: 46,
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 12,
-  },
-
-  signupBtnText: {
-    color: "#fff",
-    fontWeight: "600",
-    fontSize: 16,
-  },
-
   orText: {
     textAlign: "center",
     marginVertical: 12,

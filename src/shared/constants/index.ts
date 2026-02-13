@@ -10,4 +10,5 @@ export const SCREENS = {
   TAB: "Tab",
   NEwLOGIN: "NewLogin",
   SIGNUPSCREEN: "SignUpScreen",
+  NEWHOMESCREEN: "NewHomeScreen",
 };

@@ -20,7 +20,6 @@ const NewLoginViewModel = () => {
   };
 
   const Signupbuttonpress = () => {
-    console.log("Abhishek");
     navigate(SCREENS.SIGNUPSCREEN);
   };
 
