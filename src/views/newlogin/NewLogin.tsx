@@ -82,7 +82,7 @@ const NewLoginScreen = (props: LoginProps) => {
 
           <AppButton
             title={"Login"}
-            disabled={true}
+            disabled={false}
             onPress={props.lgnbuttonPress}
           />
 

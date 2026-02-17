@@ -8,7 +8,11 @@ import { CATEGORIES } from "./models/CategoryData";
 import MovieHorizontalList from "./components/movielist/MovieHorizontalList";
 import ButtonWithIcon from "components/buttonwithicon";
 
-const NewHomeScreen = () => {
+interface NowShowingProps {
+  ontapped: () => void;
+}
+
+const NewHomeScreen = (props: NowShowingProps) => {
   return (
     <SafeAreaView style={styles.safe} edges={["bottom"]}>
       <ScrollView
@@ -19,9 +23,7 @@ const NewHomeScreen = () => {
         <CategoryList
           data={CATEGORIES}
           styles={styles}
-          onPress={(item) => {
-            console.log("Selected:", item.label);
-          }}
+          onPress={props.ontapped}
         />
 
         {/* Promotional Banner */}
@@ -55,7 +57,9 @@ const NewHomeScreen = () => {
         <ButtonWithIcon
           name="BROWSE BY CINEMA"
           icon="📍"
-          onPress={() => console.log("Browse pressed")}
+          onPress={() => {
+            props.ontapped;
+          }}
         />
         <View style={styles.bottomSpacer} />
       </ScrollView>

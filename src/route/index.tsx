@@ -16,6 +16,7 @@ import NewLoginViewModel from "viewModels/NewLoginViewModel";
 import SignUpScreenViewModel from "viewModels/SignUpViewModel";
 import NewHomeViewModel from "viewModels/NewHomeScreenViewModel";
 import { HomeHeader } from "views/newhome/NewHomeHeader";
+import NowShowingScreenViewModel from "viewModels/NowShowingScreenViewModel";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -35,8 +36,11 @@ const TabIcon = (route: any, focused: boolean) => {
         return <></>;
     }
   };
+
   return getTabIcon(route.name);
 };
+
+const Header = () => <HomeHeader />;
 
 const HomeStackNavigator = () => {
   return (
@@ -45,10 +49,19 @@ const HomeStackNavigator = () => {
         name={SCREENS.NEWHOMESCREEN}
         component={NewHomeViewModel}
         options={{
-          header: () => <HomeHeader />,
+          header: Header, // ✅ stable reference
         }}
       />
       <HomeStack.Screen name={SCREENS.DETAIL} component={DetailScreen} />
+
+      <HomeStack.Screen
+        name={SCREENS.NOWSHOWINGSCREEN}
+        component={NowShowingScreenViewModel}
+        options={{
+          headerBackTitleVisible: false,
+          headerTintColor: "black",
+        }}
+      />
     </HomeStack.Navigator>
   );
 };

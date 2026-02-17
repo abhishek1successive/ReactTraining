@@ -1,0 +1,95 @@
+import { StyleSheet } from "react-native";
+
+const RED = "#d61d00";
+
+export const styles = StyleSheet.create({
+  safe: { flex: 1, backgroundColor: "#F5F5F5" },
+  scrollContent: { paddingBottom: 24, paddingTop: 8 },
+
+  bannerWrapper: { paddingHorizontal: 16, marginBottom: 16 },
+  banner: {
+    flexDirection: "row",
+    borderRadius: 12,
+    overflow: "hidden",
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+  },
+  bannerLeft: {
+    flex: 1,
+    backgroundColor: "#1A1A1A",
+    padding: 14,
+    minHeight: 140,
+  },
+  bannerSmall: { fontSize: 10, color: "#FFF", letterSpacing: 0.5 },
+  bannerSub: { fontSize: 10, color: "#AAA", marginTop: 2, marginBottom: 10 },
+  codeBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#444",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 4,
+    alignSelf: "flex-start",
+    marginBottom: 6,
+  },
+  codeText: { fontSize: 11, color: "#FFF" },
+  codeHighlight: { fontSize: 12, color: RED, fontWeight: "700" },
+  bannerBook: { fontSize: 10, color: "#FFF" },
+  bannerTc: { fontSize: 9, color: "#888", marginTop: 2 },
+  bannerRight: {
+    flex: 1,
+    backgroundColor: RED,
+    padding: 14,
+    justifyContent: "center",
+  },
+  bannerRightTitle: {
+    fontSize: 14,
+    fontWeight: "700",
+    color: "#FFF",
+    lineHeight: 18,
+  },
+  bannerRightSub: { fontSize: 11, color: "rgba(255,255,255,0.9)" },
+
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingHorizontal: 16,
+    gap: 16,
+  },
+  gridItem: {},
+  movieCard: {
+    marginBottom: 8,
+  },
+  posterWrapper: {
+    width: "100%",
+    aspectRatio: 2 / 3,
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "#E0E0E0",
+    position: "relative",
+  },
+  poster: { width: "100%", height: "100%" },
+  reReleaseBadge: {
+    position: "absolute",
+    top: 8,
+    right: 8,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 4,
+  },
+  reReleaseText: { fontSize: 10, color: "#FFF", fontWeight: "700" },
+  ratingRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 8,
+    gap: 4,
+  },
+  rating: { fontSize: 13, color: RED, fontWeight: "700" },
+  votes: { fontSize: 11, color: "#666" },
+  movieTitle: { fontSize: 13, fontWeight: "600", color: "#000", marginTop: 4 },
+  bottomSpacer: { height: 24 },
+});

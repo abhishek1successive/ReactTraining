@@ -7,6 +7,9 @@ interface AppButtonProps {
   onPress: () => void;
   disabled?: boolean;
 }
+interface Colors {
+  danger: string;
+}
 
 function AppButton({ title, onPress, disabled = false }: AppButtonProps) {
   const theme = useTheme();
@@ -15,7 +18,11 @@ function AppButton({ title, onPress, disabled = false }: AppButtonProps) {
   const styles = createStyles(colors);
 
   return (
-    <TouchableOpacity style={styles.loginBtn} onPress={onPress}>
+    <TouchableOpacity
+      style={styles.loginBtn}
+      disabled={disabled}
+      onPress={onPress}
+    >
       <Text style={styles.loginText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -23,7 +30,8 @@ function AppButton({ title, onPress, disabled = false }: AppButtonProps) {
 
 export default AppButton;
 
-const createStyles = (colors?: string) =>
+/* eslint-disable react-native/no-unused-styles */
+const createStyles = (colors?: Colors) =>
   StyleSheet.create({
     loginBtn: {
       backgroundColor: colors?.danger,
