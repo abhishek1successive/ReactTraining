@@ -1,22 +1,25 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { styles } from "../NowShowingStyle";
-import { Movie } from "views/newhome/models/MovieData";
+import { MovieModel1 } from "models/MovieModel";
 
 interface Props {
-  movie: Movie;
+  movie: MovieModel1;
   width: number;
-  onPress: (movie: Movie) => void;
+  onPress?: (movie: MovieModel1) => void;
 }
 
 const MovieCard: React.FC<Props> = ({ movie, width, onPress }) => {
   return (
-    <View style={[styles.gridItem, { width }]}>
-      <TouchableOpacity onPress={() => onPress(movie)} style={styles.movieCard}>
+    <TouchableOpacity onPress={() => onPress?.(movie)}>
+      <View style={[styles.gridItem, { width }]}>
         <View style={styles.posterWrapper}>
-          <Image source={movie.image} style={styles.poster} />
+          <Image
+            source={{ uri: movie.Poster }}
+            style={styles.poster}
+          />
 
-          {movie.reRelease && (
+          {movie?.reRelease && (
             <View style={styles.reReleaseBadge}>
               <Text style={styles.reReleaseText}>RE-RELEASE</Text>
             </View>
@@ -25,14 +28,14 @@ const MovieCard: React.FC<Props> = ({ movie, width, onPress }) => {
 
         <View style={styles.ratingRow}>
           <Text style={styles.rating}>★ {movie.rating}</Text>
-          <Text style={styles.votes}>{movie.votes} votes</Text>
+          <Text style={styles.votes}>{movie.votes}</Text>
         </View>
 
         <Text style={styles.movieTitle} numberOfLines={2}>
-          {movie.title}
+          {movie.Title}
         </Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 

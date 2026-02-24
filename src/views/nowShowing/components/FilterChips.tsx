@@ -1,7 +1,6 @@
 import React from "react";
 import { ScrollView, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-
 interface Props {
   filters: string[];
   selectedFilter: string;
@@ -48,22 +47,10 @@ const FilterChips: React.FC<Props> = ({
 
 export default React.memo(FilterChips);
 
-const RED = "#d61d00";
-
-
 const styles = StyleSheet.create({
   filtersScroll: { paddingHorizontal: 16, gap: 10, paddingRight: 24 },
 
   filtersWrapper: { marginBottom: 12 },
-  filterIconBtn: {
-    width: 40,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: RED,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  filterIcon: { fontSize: 18, color: "#FFF" },
   filterBtn: {
     paddingHorizontal: 16,
     height: 36,

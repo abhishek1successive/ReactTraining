@@ -15,6 +15,7 @@ import SearchScreen from "views/search/SearchScreen";
 import NewLoginViewModel from "viewModels/NewLoginViewModel";
 import SignUpScreenViewModel from "viewModels/SignUpViewModel";
 import NewHomeViewModel from "viewModels/NewHomeScreenViewModel";
+import BlinkitHomeViewModel from "viewModels/BlinkitHomeViewModel";
 import { HomeHeader } from "views/newhome/NewHomeHeader";
 import NowShowingScreenViewModel from "viewModels/NowShowingScreenViewModel";
 
@@ -106,7 +107,14 @@ const Navigation = () => {
       }}
       theme={isDarkMode ? DarkTheme : LightTheme}
     >
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={SCREENS.BLINKITHOME}
+      >
+        <Stack.Screen
+          name={SCREENS.BLINKITHOME}
+          component={BlinkitHomeViewModel}
+        />
         <Stack.Screen name={SCREENS.NEwLOGIN} component={NewLoginViewModel} />
         <Stack.Screen
           name={SCREENS.DASHBOARD}

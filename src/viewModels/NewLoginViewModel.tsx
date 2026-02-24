@@ -16,7 +16,7 @@ const NewLoginViewModel = () => {
   }, []);
 
   const lgnbuttonPress = () => {
-   console.log("Abhishek");
+    console.log("Abhishek");
     navigate(SCREENS.DASHBOARD);
   };
 

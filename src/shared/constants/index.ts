@@ -11,5 +11,6 @@ export const SCREENS = {
   NEwLOGIN: "NewLogin",
   SIGNUPSCREEN: "SignUpScreen",
   NEWHOMESCREEN: "NewHomeScreen",
-  NOWSHOWINGSCREEN:"NowShowingScreen"
+  NOWSHOWINGSCREEN: "NowShowingScreen",
+  BLINKITHOME: "BlinkitHome",
 };

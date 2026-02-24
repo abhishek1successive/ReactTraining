@@ -1,50 +1,52 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NowShowingScreen from "views/nowShowing/NowShowingScreen";
-import { Movie,RECOMMENDED_MOVIES } from "views/newhome/models/MovieData";
 
+import { MovieDataModel, MovieModel1 } from "models/MovieModel";
+import { getMoviesDetail } from "controllers/movieListingController";
 
 const NowShowingScreenViewModel = () => {
-
   const [selectedFilter, setSelectedFilter] = useState<string>("New Releases");
+  const [mvData, setMvData] = useState<MovieDataModel>([]);
 
   const filters = ["New Releases", "Re-releases", "Hindi", "Eng"];
 
-
-  const filteredMovies: Movie[] = useMemo(() => {
-    switch (selectedFilter) {
-      case "Re-releases":
-        return RECOMMENDED_MOVIES.filter((m) => m.reRelease);
-      default:
-        return RECOMMENDED_MOVIES;
-    }
-  }, [selectedFilter]);
-
-
-   const onSelectFilter = (filter: string) => {
+  const onSelectFilter = (filter: string) => {
     setSelectedFilter(filter);
   };
 
-  const onMoviePress = (movie: Movie) => {
-    console.log("Movie clicked:", movie.title);
+  const onMoviePress = (movie: MovieModel1) => {
+    console.log("Movie clicked:", movie);
   };
 
   const onComingSoonPress = () => {
     console.log("Navigate to Coming Soon");
   };
 
+  const getMovieData = async () => {
+    try {
+      const res = await getMoviesDetail();
+      if (res && typeof res === "object" && "data" in res) {
+        setMvData(res.data?.data || []);
+      }
+    } catch (error) {
+      console.log("API Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    getMovieData();
+  }, []);
+
   return (
     <NowShowingScreen
       filters={filters}
       selectedFilter={selectedFilter}
-      filteredMovies={filteredMovies}
       onSelectFilter={onSelectFilter}
-      onMoviePress={onMoviePress}
       onComingSoonPress={onComingSoonPress}
+      onMoviePress={onMoviePress}
+      mvData={mvData}
     />
   );
 };
-
-
-
 
 export default NowShowingScreenViewModel;
