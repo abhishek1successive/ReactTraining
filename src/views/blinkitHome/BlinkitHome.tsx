@@ -133,9 +133,14 @@ const BlinkitHome = ({
               <>
                 <View style={styles.modalHandle} />
                 <View style={styles.modalHeader}>
-                  <Image source={selectedService.image} style={styles.modalImage} />
+                  <Image
+                    source={selectedService.image}
+                    style={styles.modalImage}
+                  />
                   <View style={styles.modalTitleWrap}>
-                    <Text style={styles.modalTitle}>{selectedService.name}</Text>
+                    <Text style={styles.modalTitle}>
+                      {selectedService.name}
+                    </Text>
                     <Text style={styles.modalSubtitle}>
                       Professional house help service at your doorstep.
                     </Text>

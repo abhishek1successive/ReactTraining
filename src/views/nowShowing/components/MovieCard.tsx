@@ -14,10 +14,7 @@ const MovieCard: React.FC<Props> = ({ movie, width, onPress }) => {
     <TouchableOpacity onPress={() => onPress?.(movie)}>
       <View style={[styles.gridItem, { width }]}>
         <View style={styles.posterWrapper}>
-          <Image
-            source={{ uri: movie.Poster }}
-            style={styles.poster}
-          />
+          <Image source={{ uri: movie.Poster }} style={styles.poster} />
 
           {movie?.reRelease && (
             <View style={styles.reReleaseBadge}>

@@ -6,9 +6,7 @@ const APIConstants = {
   axiosCallRetryTimeout: 5000,
   BaseURL: BASE_URL,
   GetUser: "users",
-  Getmovie:"movies"
+  Getmovie: "movies",
 };
-
-
 
 export default APIConstants;
