@@ -10,19 +10,20 @@ import themeReducer from "../reducers/ThemeReducer";
 import accountReducer from "redux/reducers/AccountReducer";
 import { DESTROY_SESSION } from "redux/actionConstants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import movieReducer from "redux/reducers/MovieReducer";
 const middleware = applyMiddleware(thunk);
 
 const reducers = combineReducers({
   userAccount: accountReducer,
   themeReducer: themeReducer,
+  movieReducer: movieReducer,
 });
 
 //* white list only those reducers which needs to be stored locally.
 const persistConfig = {
   key: "@boiler",
   storage: AsyncStorage,
-  whitelist: ["themeReducer"],
-};
+  whitelist: ["themeReducer", "movieReducer"]};
 
 const rootReducer = (state, action) => {
   if (action.type === DESTROY_SESSION) state = undefined;

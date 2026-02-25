@@ -1,6 +1,6 @@
-export type MovieDataModel = MovieModel1[];
+export type MovieDataModel = MovieModel[];
 
-export interface MovieModel1 {
+export interface MovieModel {
   Title: string;
   Year: string;
   Runtime: string;
@@ -8,9 +8,4 @@ export interface MovieModel1 {
   rating?: string;
   votes?: string;
   reRelease?: boolean;
-}
-
-export interface MovieModel {
-  isSuccess: boolean;
-  data: MovieDataModel;
 }

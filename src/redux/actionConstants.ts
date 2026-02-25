@@ -6,3 +6,5 @@ export const SET_APP_THEME = "SET_APP_THEME";
 
 //#region Logout
 export const DESTROY_SESSION = "DESTROY_SESSION";
+
+export const SET_MOVIES = "SET_MOVIES";

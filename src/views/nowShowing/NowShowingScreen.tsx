@@ -13,16 +13,16 @@ import { styles } from "./NowShowingStyle";
 import ComingSoonBanner from "./components/ComingSoonBanner";
 import FilterChips from "./components/FilterChips";
 
-import { MovieDataModel, MovieModel1 } from "models/MovieModel";
+import { MovieModel } from "models/MovieModel";
 import MovieCard from "./components/MovieCard";
 
 interface NowShowingProps {
   filters: string[];
   selectedFilter: string;
   onSelectFilter: (filter: string) => void;
-  onMoviePress: (movie: MovieModel1) => void;
+  onMoviePress: (movie: MovieModel) => void;
   onComingSoonPress: () => void;
-  mvData: MovieDataModel;
+  mvData: MovieModel[];
 }
 
 const NowShowingScreen = (props: NowShowingProps) => {
@@ -47,7 +47,7 @@ const NowShowingScreen = (props: NowShowingProps) => {
           <MovieCard
             movie={item}
             width={cardWidth}
-            onPress={props.onMoviePress}
+            onPress={() => props.onMoviePress(item)}
           />
         )}
         showsVerticalScrollIndicator={false}

@@ -1,11 +1,11 @@
 import APIConstants from "core/ApiConstants";
-import { MovieModel } from "models/MovieModel";
+import { MovieDataModel } from "models/MovieModel";
 import { sendGetRequest } from "services/network/Network";
 import LocalString from "shared/localization/localEnums";
 
 export const getMoviesDetail = async () => {
   try {
-    const response = await sendGetRequest<MovieModel>(APIConstants.Getmovie);
+    const response = await sendGetRequest<MovieDataModel>(APIConstants.Getmovie);
     if (response.isSuccess) {
       return response;
     } else return response.errors;

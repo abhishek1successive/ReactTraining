@@ -80,11 +80,7 @@ const NewLoginScreen = (props: LoginProps) => {
 
           {/* Login */}
 
-          <AppButton
-            title={"Login"}
-            disabled={false}
-            onPress={props.lgnbuttonPress}
-          />
+          <AppButton title={"Login"} onPress={props.lgnbuttonPress} />
 
           {/* Divider */}
           <Text style={styles.orText}>Or Login Using</Text>
